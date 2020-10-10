@@ -10,7 +10,7 @@ const e = require('express');
                                                   
 app.use(express.static('public'));                    // 정적 이미지 처리
 app.use(bodyParser.urlencoded({ extended: false }));  // form 방식으로 body 값을 전체적으로 분석할 때 
-app.use(compression());
+app.use(compression());                               // 압축모듈 사용할 때
 app.get('*', function(request, response, next){     // get 방식으로 오는 것만 나의 미들웨어를 적용 받음
   fs.readdir('./data', function (error, filelist) {
     request.list = filelist;
