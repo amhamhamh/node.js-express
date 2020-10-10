@@ -79,7 +79,7 @@ app.get('/create', function (request, response) {
 });
 
 app.post('/create_process', function (request, response) {
-  var post = request.body;
+  var post = request.body;   //여기가 parse body 값
   var title = post.title;
   var description = post.description;
   fs.writeFile(`data/${title}`, description, 'utf8', function (err) {
